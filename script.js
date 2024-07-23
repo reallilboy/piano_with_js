@@ -1,0 +1,23 @@
+const note = document.querySelector('.nowplaying')
+const keys = document.querySelector('.key')
+const hinst = document.querySelector('.hints')
+
+window.addEventListener('keydown' , function(e) {
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+    const audio = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+    if(! key) return;
+    const keyNote = key.getAttribute('data-note');
+    key.classList.add('playing')
+    note.innerHTML = keyNote;
+    audio.currentTime = 0
+    audio.play
+});
+
+function removeTransitio(){
+    this.classList.remove('playing')
+}
+
+
+hints.forEach(function(elm,index){
+    elm.style = `transition-delay:${index * 50}ms`
+}
